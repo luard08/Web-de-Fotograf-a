@@ -16,20 +16,28 @@ header{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     padding: 10px 20px 10px 20px;
+    animation: slidein 4s;
   }
-
+@-webkit-keyframes slidein{
+    0%{
+        margin-top: 150%;
+    }
+    60%{
+       margin-top: -5%; 
+    }
+    100%{
+        margin-top: 0%;
+    }
+}
  
 /* creacion de galerias*/
 header h1{
     color:#fff;
     text-shadow: 2px 2px #02010a;
     text-align: left;
-    
 }
 
-
 /*Menu principal>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
 
 #MenuPrincipal ul {
     text-align: right;
@@ -48,14 +56,12 @@ header h1{
 
 
 /*Contenido>>>>>>>>>>>>>>>>>>>>>>>>*/
-
-
 #portada0{
     background-color: #82c3a6;
     padding-top: 10px;
     padding-bottom: 10px;  
-
 }
+
 #portada0 img{
     width: 90%;
     display: block;
@@ -63,29 +69,42 @@ header h1{
     box-shadow: 2px 2px #02010a;
 }
 
-
-
-
 #portada1 img{
     width: 90%;
     display: block;
     margin: auto;
+    box-shadow: 2px 2px #02010a;
+}
+.imagen20 img{
+    transform:rotate(none);    
+    transition-property:transform rotate;  
+    transition-duration: 1s;
+     
+}
+.imagen20 img:hover{
+    transform:rotate(10deg); 
+}
+.imagen30 img{
+    width: 90%;
+    transform:translatex(none);    
+    transition-property: width, transform translatex;  
+    transition-duration: 1s, 1s;
+}
+.imagen30 img:hover{ 
+    width: 85px;
+    transform: translatex(10px); 
 }
 
-
 /*Pie>>>>>>>>>>>>>>>>>>>>>>>>>*/
-
 
    #portada1 P{
     font-weight: bold;
     text-align: center;
-    font-size: 20PX;
+    font-size: 20PX;  
 }
+#portada1 P a{color:#000;}
 
-
-
-
-/*media destop>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*media destop>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media screen and (max-width: 1920px) { 
     #contenedor{
         width: 900px;
@@ -126,7 +145,8 @@ header h1{
 
     #pie img{
     width: 20px;
-}
+
+    }
 
 /*paginas galerias>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
   
@@ -153,9 +173,9 @@ header h1{
         box-shadow: 2px 2px #02010a;
     }
 
-    
+}
 
-/*media moviles>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*
+/*media moviles>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 @media screen and (max-width: 480px){ 
     #contenedor{
         width: 100%;
@@ -204,9 +224,14 @@ header h1{
         margin: auto;
         box-shadow: 2px 2px #02010a;
     }
+    
+    #pie ul{
+        width: 100%;
+    }
 
 }
 /*Galelias filtros>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
 article[class$='1']{
     -webkit-filter:blur(10px); 
     filter:blur(10px); 
